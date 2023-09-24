@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Task: Login{% endblock %}
+
+{% block content %}
+<div class="container mt-5" style="width: 50%;">
+    <div class="login-card">
+        <h2 class="text-center">Login</h2>
+        <form class="form-control" method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="mb-3">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-login btn-block">Login</button>
+            <div class="mb-3 mt-3">
+                <p>Not registerd? <a href="{% url 'register' %}">Register here</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
