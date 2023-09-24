@@ -15,7 +15,7 @@ class FileUploadView(LoginRequiredMixin, CreateView):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
-class FileBrowserView(ListView):
+class FileBrowserView(LoginRequiredMixin, ListView):
     model = UploadedFile
     template_name = 'uploader/file_browser.html'
     context_object_name = 'files'
