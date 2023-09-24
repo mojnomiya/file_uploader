@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %} File Uploader : Browse {% endblock %}
+{% block content %}
+
+<div class="container mt-5">
+    <h3 class="mb-3">File Browser</h3>
+    <div class="row">
+        {% for file in files %}
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ file.file.name }}</h5>
+                        <p class="card-text">Uploaded by: {{ file.user.username }}</p>
+                        <a href="{{ file.file.url }}" class="btn btn-primary" target="_blank">View File</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

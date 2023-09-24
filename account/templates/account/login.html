@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Task: Login{% endblock %}
+{% block title %}File Uploader: Login{% endblock %}
 
 {% block content %}
 <div class="container mt-5" style="width: 50%;">
@@ -13,7 +13,7 @@
                     {{ field }}
                 </div>
             {% endfor %}
-            <button type="submit" class="btn btn-login btn-block">Login</button>
+            <button type="submit" class="btn btn-outline-success btn-block">Login</button>
             <div class="mb-3 mt-3">
                 <p>Not registerd? <a href="{% url 'register' %}">Register here</a></p>
             </div>
